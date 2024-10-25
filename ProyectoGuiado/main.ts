@@ -14,19 +14,17 @@ let cursosTable: HTMLElement= document.getElementById('cursos')!;
 let filtroButton: HTMLElement= document.getElementById('boton-filtro')!;
 let textoBusqueda: HTMLInputElement= <HTMLInputElement>document.getElementById('texto-busqueda')!;
 
-filtroButton.onclick= filtrarPorNombre;
+filtroButton.onclick= () => {
+    let text: string=textoBusqueda.value;
+    text= (text==null)?"":text; 
+    cursosTable.getElementsByTagName("tbody")[0].remove();
+    let cursosFiltrados: Curso[]= ap.cursos.filter(c => c.nombre.match(text));
+    mostrarCursosAprendiz(cursosFiltrados);
+}
 
 mostrarDatosAprendiz(ap);
 mostrarEstadisticasAprendiz(ap);
 mostrarCursosAprendiz(ap.cursos);
-
-function filtrarPorNombre(): void{
-    let text: string=textoBusqueda.value;
-    text= (text==null)?"":text; 
-    cursosTable.getElementsByTagName("tbody")[0].remove();
-    let cursosFiltrados: Curso[]= ap.cursos.filter(function(curso){return curso.nombre.match(text)})
-    mostrarCursosAprendiz(cursosFiltrados);
-}
 
 
 function mostrarDatosAprendiz(aprendiz: Aprendiz): void{
