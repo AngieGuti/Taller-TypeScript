@@ -1,8 +1,8 @@
 import { Aprendiz, NivelEducativo } from './aprendiz.js';
 import { Curso } from './curso.js';
 var cursos = [new Curso("Diseño y analisis de algoritmos", 80, 10, false, 20242),
-    new Curso("Desarrollo de software en squipos", 50, 44, true, 20242),
-    new Curso("Arquitectura empresarial", 100, 41, true, 20242),
+    new Curso("Desarrollo de software en squipos", 50, 44, false, 20242),
+    new Curso("Arquitectura empresarial", 100, 41, false, 20242),
     new Curso("Estructura de datos y algoritmos", 65, 42, true, 20232),
     new Curso("Fundamentos matematicos para la computacion", 40, 45, true, 20232),
     new Curso("Fundamentos de infraestructura tecnologica", 60, 50, true, 20241)];
