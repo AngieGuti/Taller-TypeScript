@@ -1,10 +1,12 @@
 import {Aprendiz, NivelEducativo} from './aprendiz.js';
 import {Curso} from './curso.js';
 
-let cursos= [new Curso("Dalgo", 80, 10, false, 2024), 
-    new Curso("Desarrollo", 50, 45, true, 2024),
-    new Curso("Arquiemp", 100, 41, true, 2024),
-    new Curso("Sistrans", 55, 35, false, 2025)];
+let cursos= [new Curso("Diseño y analisis de algoritmos", 80, 10, false, 20242), 
+    new Curso("Desarrollo de software en squipos", 50, 44, true, 20242),
+    new Curso("Arquitectura empresarial", 100, 41, true, 20242),
+    new Curso("Estructura de datos y algoritmos", 65, 42, true, 20232),
+    new Curso("Fundamentos matematicos para la computacion", 40, 45, true, 20232),
+    new Curso("Fundamentos de infraestructura tecnologica", 60, 50, true, 20241)];
 
 export const ap= new Aprendiz("Angie Camila", "Gutiérrez Trujillo", "avatar.jpg", 19, NivelEducativo.UNIVERSIDAD,  cursos); 
 
@@ -46,14 +48,17 @@ function mostrarEstadisticasAprendiz(aprendiz: Aprendiz): void{
 
 function mostrarCursosAprendiz(cursos: Curso[]): void{
     let cursosTbody: HTMLElement= document.createElement("tbody");
+    let estado: string[]= cursos.map(c=>(c.calificacion>=30)?"green":"red");
+    let index: number=0;
     for(let curso of cursos){
         let trElement: HTMLElement= document.createElement("tr");
         trElement.innerHTML=`<td>${curso.nombre}</td>
         <td>${curso.horas}</td>
-        <td>${curso.calificacion}</td>
+        <td style="color: ${estado[index]}">${curso.calificacion}</td>
         <td>${curso.certificacion}</td>
         <td>${curso.anio}</td>`;	
         cursosTbody.appendChild(trElement);
+        index++;
     }
     cursosTable.appendChild(cursosTbody);
 }

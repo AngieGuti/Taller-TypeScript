@@ -1,9 +1,11 @@
 import { Aprendiz, NivelEducativo } from './aprendiz.js';
 import { Curso } from './curso.js';
-var cursos = [new Curso("Dalgo", 80, 10, false, 2024),
-    new Curso("Desarrollo", 50, 45, true, 2024),
-    new Curso("Arquiemp", 100, 41, true, 2024),
-    new Curso("Sistrans", 55, 35, false, 2025)];
+var cursos = [new Curso("Diseño y analisis de algoritmos", 80, 10, false, 20242),
+    new Curso("Desarrollo de software en squipos", 50, 44, true, 20242),
+    new Curso("Arquitectura empresarial", 100, 41, true, 20242),
+    new Curso("Estructura de datos y algoritmos", 65, 42, true, 20232),
+    new Curso("Fundamentos matematicos para la computacion", 40, 45, true, 20232),
+    new Curso("Fundamentos de infraestructura tecnologica", 60, 50, true, 20241)];
 export var ap = new Aprendiz("Angie Camila", "Gutiérrez Trujillo", "avatar.jpg", 19, NivelEducativo.UNIVERSIDAD, cursos);
 var aprendizTable = document.getElementById('aprendiz');
 var estadisticasTable = document.getElementById('estadisticas');
@@ -33,11 +35,14 @@ function mostrarEstadisticasAprendiz(aprendiz) {
 }
 function mostrarCursosAprendiz(cursos) {
     var cursosTbody = document.createElement("tbody");
+    var estado = cursos.map(function (c) { return (c.calificacion >= 30) ? "green" : "red"; });
+    var index = 0;
     for (var _i = 0, cursos_1 = cursos; _i < cursos_1.length; _i++) {
         var curso = cursos_1[_i];
         var trElement = document.createElement("tr");
-        trElement.innerHTML = "<td>".concat(curso.nombre, "</td>\n        <td>").concat(curso.horas, "</td>\n        <td>").concat(curso.calificacion, "</td>\n        <td>").concat(curso.certificacion, "</td>\n        <td>").concat(curso.anio, "</td>");
+        trElement.innerHTML = "<td>".concat(curso.nombre, "</td>\n        <td>").concat(curso.horas, "</td>\n        <td style=\"color: ").concat(estado[index], "\">").concat(curso.calificacion, "</td>\n        <td>").concat(curso.certificacion, "</td>\n        <td>").concat(curso.anio, "</td>");
         cursosTbody.appendChild(trElement);
+        index++;
     }
     cursosTable.appendChild(cursosTbody);
 }
