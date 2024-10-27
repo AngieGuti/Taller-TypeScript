@@ -1,4 +1,4 @@
-import { Serie } from "./serie";
+import { Serie } from "./serie.js";
 
 export const series = [
     new Serie (1,"Breaking Bad","AMC", 5,"Set and filmed in Albuquerque, New Mexico, the series tells the story of Walter White, a struggling and depressed high school chemistry teacher who is diagnosed with lung cancer" ,
@@ -22,7 +22,7 @@ export const series = [
 
 
   
-let navBar: HTMLElement = document.getElementById('nav-bar')!;  
+
 let seriesTable: HTMLElement = document.getElementById('series')!;
 let filtroButton: HTMLElement= document.getElementById('boton-filtro')!;
 let textoBusqueda: HTMLInputElement= <HTMLInputElement>document.getElementById('texto-busqueda')!;
@@ -45,8 +45,7 @@ function mostrarSeries(series: Serie[]): void{
         <td>${serie.id}</td>
         <td>${serie.nombre}</td>
         <td>${serie.canal}</td>
-        <td>${serie.temporadas}</td>
-        <td><a href="${serie.link}">Ver</a></td>`;	
+        <td>${serie.temporadas}</td>`;	
         seriesTbody.appendChild(trElement);
     }
     seriesTable.appendChild(seriesTbody);

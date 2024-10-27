@@ -23,7 +23,7 @@ function mostrarSeries(series) {
     for (var _i = 0, series_1 = series; _i < series_1.length; _i++) {
         var serie = series_1[_i];
         var trElement = document.createElement("tr");
-        trElement.innerHTML = "\n        <td>".concat(serie.id, "</td>\n        <td>").concat(serie.nombre, "</td>\n        <td>").concat(serie.canal, "</td>\n        <td>").concat(serie.temporadas, "</td>\n        <td><a href=\"").concat(serie.link, "\">Ver</a></td>");
+        trElement.innerHTML = "\n        <td>".concat(serie.id, "</td>\n        <td>").concat(serie.nombre, "</td>\n        <td>").concat(serie.canal, "</td>\n        <td>").concat(serie.temporadas, "</td>");
         seriesTbody.appendChild(trElement);
     }
     seriesTable.appendChild(seriesTbody);
