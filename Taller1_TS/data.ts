@@ -21,6 +21,8 @@ export const series = [
   ];
 
 
+  
+let navBar: HTMLElement = document.getElementById('nav-bar')!;  
 let seriesTable: HTMLElement = document.getElementById('series')!;
 let filtroButton: HTMLElement= document.getElementById('boton-filtro')!;
 let textoBusqueda: HTMLInputElement= <HTMLInputElement>document.getElementById('texto-busqueda')!;
