@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Taller TypeScript 1</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel="icon" href="data:,">
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <link rel="stylesheet" type="text/css" href="tallertypescript.css">
+    <script type="module" src='./scripts/main.js'></script>
+</head>
+<body>
+    <div class="container mt-4">
+        <h1>Taller TypeScript 1</h1>
+        
+        <h2>Estadisticas</h2>
+        <table class="table table-striped" id="estadisticas">
+            <thead>
+                <tr>
+                    <th>Estadística</th>
+                    <th>Valor</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Estadísticas data will go here -->
+            </tbody>
+        </table>
+        
+        <h2>Cursos Tomados</h2>
+        <input type="text" class="form-control mb-2" id="texto-busqueda" placeholder="Filtrar cursos por nombre">
+        <button type="button" class="btn btn-success mb-3" id="boton-filtro">Aplicar</button>
+        
+        <table class="table table-hover" id="series">
+            <thead class="thead-dark">
+                <tr>
+                    <th>#</th>
+                    <th>Nombre</th>
+                    <th>Canal</th>
+                    <th>Temporadas</th>
+                    <th>Link</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Series data will be appended here -->
+            </tbody>
+        </table>
+    </div>
+    
+    <!-- Bootstrap JS (optional) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
