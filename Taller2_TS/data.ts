@@ -57,13 +57,13 @@ function mostrarDetallesSerie(serie: Serie): void {
     const cardDescripcion: HTMLElement = document.getElementById('card-descripcion')!;
     const cardEnlace: HTMLAnchorElement = document.getElementById('card-enlace') as HTMLAnchorElement;
 
-    // Asignar los valores a la tarjeta
-    cardImagen.src = serie.imagen; // Asegúrate de que `imagen` es la propiedad correcta
+    
+    cardImagen.src = serie.imagen; 
     cardTitulo.innerText = serie.nombre;
     cardDescripcion.innerText = serie.descripcion;
-    cardEnlace.href = serie.link; // Asegúrate de que `enlace` es la propiedad correcta
+    cardEnlace.href = serie.link; 
+    cardEnlace.innerText = serie.link; 
 
-    // Mostrar la tarjeta
     const detalleSerie: HTMLElement = document.getElementById('detalle-serie')!;
     detalleSerie.style.display = 'block'; // Muestra la tarjeta
 }

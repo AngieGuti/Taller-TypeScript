@@ -23,41 +23,41 @@
 
     
     <div class="container mt-4">
-          
-        
         <div class="row">
             <div class="col">
-            <input type="text" class="form-control mb-2" id="texto-busqueda" placeholder="Filtrar cursos por nombre">
-            <button type="button" class="btn btn-success mb-3" id="boton-filtro">Aplicar</button>
+                <input type="text" class="form-control mb-2" id="texto-busqueda" placeholder="Filtrar cursos por nombre">
+                <button type="button" class="btn btn-success mb-3" id="boton-filtro">Aplicar</button>
             </div>
-        
+        </div>
 
         <div class="row">
-            <div class="col" width="40%">
-            <table class="table table-hover" id="series">
-                <thead class="thead-dark">
-                    <tr>
-                        <th>#</th>
-                        <th>Nombre</th>
-                        <th>Canal</th>
-                        <th>Temporadas</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <!-- Series data will be appended here -->
-                </tbody>
-            </table>
-            <div class="col-4" width="40%">
+            <div class="col-8"> <!-- Columna para la tabla -->
+                <table class="table table-hover" id="series">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th>#</th>
+                            <th>Nombre</th>
+                            <th>Canal</th>
+                            <th>Temporadas</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Las filas se agregarán aquí dinámicamente -->
+                    </tbody>
+                </table>
+            </div>
+            <div class="col-4"> <!-- Columna para la tarjeta -->
                 <div class="card my-3" id="detalle-serie" style="display: none;"> <!-- Oculta la tarjeta inicialmente -->
                     <img src="" class="card-img-top" id="card-imagen" alt="Imagen de la serie">
                     <div class="card-body">
                         <h5 class="card-title" id="card-titulo">Título de la Serie</h5>
                         <p class="card-text" id="card-descripcion">Descripción de la serie aquí.</p>
-                        <a href="#" id="card-enlace" class="btn btn-primary">Ver más</a>
+                        <p id="card-link-container">
+                            <a href="#" id="card-enlace" class="card-link">enlace</a>
+                        </p>
                     </div>
                 </div>
             </div>
-
         </div>
     </div>
     
