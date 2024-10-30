@@ -25,14 +25,13 @@ let seriesTable: HTMLElement = document.getElementById('series')!;
 let filtroButton: HTMLElement= document.getElementById('boton-filtro')!;
 let textoBusqueda: HTMLInputElement= <HTMLInputElement>document.getElementById('texto-busqueda')!;
 
-filtroButton.onclick= () => {
+filtroButton.onclick= () => { //Filtro de busqueda de series por nombre
     let text: string=textoBusqueda.value;
     text= (text==null)?"":text; 
-    seriesTable.getElementsByTagName("tbody")[0].remove();
+    seriesTable.getElementsByTagName("tbody")[1].remove();
     let seriesFiltradas: Serie[]= series.filter(s => s.nombre.match(text));
     mostrarSeries(seriesFiltradas);
 }
-
 
 function mostrarSeries(series: Serie[]): void{
     console.log("mostrarSeries");

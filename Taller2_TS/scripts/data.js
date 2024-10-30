@@ -13,7 +13,7 @@ var textoBusqueda = document.getElementById('texto-busqueda');
 filtroButton.onclick = function () {
     var text = textoBusqueda.value;
     text = (text == null) ? "" : text;
-    seriesTable.getElementsByTagName("tbody")[0].remove();
+    seriesTable.getElementsByTagName("tbody")[1].remove();
     var seriesFiltradas = series.filter(function (s) { return s.nombre.match(text); });
     mostrarSeries(seriesFiltradas);
 };
