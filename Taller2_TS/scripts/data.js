@@ -37,7 +37,8 @@ function mostrarDetallesSerie(serie) {
     var cardTitulo = document.getElementById('card-titulo');
     var cardDescripcion = document.getElementById('card-descripcion');
     var cardEnlace = document.getElementById('card-enlace');
-    console.log(serie);
+    console.log(serie.imagen);
+    cardImagen.src = '';
     cardImagen.src = serie.imagen;
     cardTitulo.innerText = serie.nombre;
     cardDescripcion.innerText = serie.descripcion;
